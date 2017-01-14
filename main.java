@@ -1,29 +1,23 @@
-# README #
+package CardJitsu;
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
-### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+public class Main {
+    public static void main(String[] args) {
+        Dealer deal = new Dealer();
+        User use = new User();
+        Player play = null;
+        Logistics log = new Logistics();
+        
+        boolean[] initElementList = {false, false, false};
+        use.initElementList(initElementList);
+        deal.initElementList(initElementList);
+        
+        while(play == null){
+            use.printDeck();
+            Card userChoice = use.chooseCard();
+            Card dealerChoice = deal.chooseCard();
+            log.roundWinner(userChoice, dealerChoice);
+            play = log.gameWinner();
+        }
+        System.out.println(play);
+    }
+}
