@@ -2,6 +2,9 @@ package CardJitsu;
 
 public class Dealer extends Player{
 
+	public Dealer(){
+		this.name = "Opponent";
+	}
     public Card chooseCard() {
         this.createDeck();
         Card[][] deck=getDeck();
