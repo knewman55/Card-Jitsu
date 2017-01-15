@@ -15,9 +15,9 @@ public class Main {
             use.printDeck();
             Card userChoice = use.chooseCard();
             Card dealerChoice = deal.chooseCard();
-            log.roundWinner(userChoice, dealerChoice);
-            play = log.gameWinner();
+            log.roundWinner(userChoice, dealerChoice, use, deal);
+            play = log.gameWinner(use, deal);
         }
-        System.out.println(play);
+        System.out.println("The " + play.name + " has won!");
     }
 }
