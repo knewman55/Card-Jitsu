@@ -2,9 +2,7 @@ package CardJitsu;
 
 public class Logistics {
     
-    public Card roundWinner(Card user, Card dealer){
-        Dealer deal = new Dealer();
-        User use = new User();
+    public Card roundWinner(Card user, Card dealer, User use, Dealer deal){
         String userChoiceE = user.getElement();
         String dealerChoiceE = dealer.getElement();
         
@@ -12,7 +10,7 @@ public class Logistics {
         int dealerChoiceS = dealer.getStrength();
         
         if(userChoiceE.equalsIgnoreCase("FIRE") && dealerChoiceE.equalsIgnoreCase("ICE")){
-            use.setElementList(0);
+        	use.setElementList(0);
             return user;
         }else if(userChoiceE.equalsIgnoreCase("WATER") && dealerChoiceE.equalsIgnoreCase("FIRE")){
             use.setElementList(1);
@@ -41,9 +39,7 @@ public class Logistics {
             }
         }
     }
-    public Player gameWinner(){
-        Dealer deal = new Dealer();
-        User use = new User();
+    public Player gameWinner(User use, Dealer deal){
         
         boolean userHasWon = false;
         boolean dealerHasWon = false;
