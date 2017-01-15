@@ -2,8 +2,9 @@ package CardJitsu;
 
 public abstract class Player {
     
-    private boolean[] hasElement = {false, false, false};
+    private boolean[] hasElement;
     private Card[][] deck;
+    protected String name;
     
     public boolean[] getElementList(){
         return this.hasElement;
@@ -20,5 +21,8 @@ public abstract class Player {
     }
     public Card[][] getDeck(){
         return this.deck;
+    }
+    public String getName(){
+    	return this.name;
     }
 }
