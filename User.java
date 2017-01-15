@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class User extends Player{
     
+	public User(){
+		this.name = "User";
+	}
     public Card chooseCard(){
         Card[][] deck = this.getDeck();
         Scanner scan = new Scanner(System.in);
