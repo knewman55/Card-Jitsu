@@ -32,7 +32,7 @@ public class Logistics {
                 use.setElementList(user.getElementNum());
                 return user;
             }else if(dealerChoiceS > userChoiceS){
-                use.setElementList(dealer.getElementNum());
+                deal.setElementList(dealer.getElementNum());
                 return dealer;
             }else{
                 return null;
@@ -58,10 +58,10 @@ public class Logistics {
             }
             dealerHasWon = true;
         }
-        if(userHasWon == true){
-            return use;
-        }else if (dealerHasWon == true){
+        if(dealerHasWon == true){
             return deal;
+        }else if (userHasWon == true){
+            return use;
         }else{
             return null;
         }
