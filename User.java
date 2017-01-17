@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class User extends Player{
     
 	public User(){
-		this.name = "User";
+		this.winDeclaration = "You have won the game!!!";
 	}
     public Card chooseCard(){
         Card[][] deck = this.getDeck();
-        Scanner scan = new Scanner(System.in);
+		Scanner scan = new Scanner(System.in);
         Card choice=null;
                
         while(choice == null){
@@ -20,6 +20,7 @@ public class User extends Player{
                 System.out.println("Choice out of range");
             }
         }
+        System.out.println("\n\nYour Card: " + choice.getElement() + " " + choice.getStrength());
         return choice;
     }
     public void printDeck(){
