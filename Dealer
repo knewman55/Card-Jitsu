@@ -3,7 +3,7 @@ package CardJitsu;
 public class Dealer extends Player{
 
 	public Dealer(){
-		this.name = "Opponent";
+		this.winDeclaration = "The opponent has won the game!";
 	}
     public Card chooseCard() {
         this.createDeck();
@@ -38,7 +38,7 @@ public class Dealer extends Player{
                 }
             }
         }
-        System.out.println("\n\n\n" + highestCard.getElement() + " " + highestCard.getStrength());
+        System.out.println("\n\nOpponent's Card: " + highestCard.getElement() + " " + highestCard.getStrength());
         return highestCard;
     }    
 }
