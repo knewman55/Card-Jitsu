@@ -9,11 +9,11 @@ public class CardGenerator {
         for(int i=0; i<card.length; i++){
             for(int j=0; j<card[i].length; j++){
                 switch(i){ //Assigns element and number based on index
-                    case 0: card[i][j] = new Card("FIRE", i, j, false);
+                    case 0: card[i][j] = new Card("FIRE", i, j + 1, false);
                         break;
-                    case 1: card[i][j] = new Card("WATER", i, j, false);
+                    case 1: card[i][j] = new Card("WATER", i, j + 1, false);
                         break;
-                    case 2: card[i][j] = new Card("ICE", i, j, false);
+                    case 2: card[i][j] = new Card("ICE", i, j + 1, false);
                         break;
                 }
             }
