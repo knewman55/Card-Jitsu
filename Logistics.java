@@ -39,20 +39,20 @@ public class Logistics {
             }
         }
     }
-    public Player gameWinner(User use, Dealer deal){
+    public Player gameWinnerDifEl(User use, Dealer deal){
         
         boolean userHasWon = false;
         boolean dealerHasWon = false;
         
         for(int i=0;i<use.getElementList().length;i++){
-            if(use.getElementList()[i] == false){
+            if(use.getElementList()[i][0] == false){
                 userHasWon = false;
                 break;
             }
             userHasWon = true;
         }
         for(int i=0;i<deal.getElementList().length;i++){
-            if(deal.getElementList()[i] == false){
+            if(deal.getElementList()[i][0] == false){
                 dealerHasWon = false;
                 break;
             }
@@ -65,5 +65,29 @@ public class Logistics {
         }else{
             return null;
         }
+    }
+    public Player gameWinnerSameEl(User use, Dealer deal){
+        boolean userHasWon = false;
+        boolean dealerHasWon = false;
+        for(int i=0; i<use.getElementList().length;i++){
+            for(int j=0; j<use.getElementList()[i].length+1;i++){
+                if(use.getElementList()[i][j] == false){
+                    userHasWon = false;
+                    break;
+                }else if(use.getElementList()[i][j] == false){
+                    dealerHasWon = false;
+                    break;
+                }
+                userHasWon = true;
+                dealerHasWon = true;
+            }          
+        }
+        if(dealerHasWon == true){
+            return deal;
+        }else if (userHasWon == true){
+            return use;
+        }else{
+            return null;
+        }//create a seperate method for this code
     }
 }
