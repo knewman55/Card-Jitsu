@@ -8,11 +8,18 @@ public class Main {
         Card winner;
         Logistics log = new Logistics();
         
-        boolean[] uinitElementList = {false, false, false};
-        boolean[] dinitElementList = {false, false, false};
+        boolean[][] uinitElementList = new boolean[3][3];
+        boolean[][] dinitElementList = new boolean[3][3];
+        for(int i=0;i<uinitElementList.length;i++){
+            for(int j=0;j<uinitElementList[i].length;j++){
+                uinitElementList[i][j] = false;
+                dinitElementList[i][j] = false;
+            }
+        }
         use.initElementList(uinitElementList);
         deal.initElementList(dinitElementList);
         
+        Window window = new Window();
         System.out.println("Welcome to Card-Jitsu: Alpha 0.0");
         while(play == null){
         	System.out.println("\nYour Deck: ");
@@ -27,9 +34,11 @@ public class Main {
             }else{
             	System.out.println("Tie!");
             }
-            play = log.gameWinner(use, deal);
+            play = log.gameWinnerSameEl(use, deal);
+            play = log.gameWinnerDifEl(use, deal);
             System.out.println("You have : " + use.printElementList());
             System.out.println("Opponent has : " + deal.printElementList());
+            System.out.println(use.printWater());
         }
         System.out.println(play.getWinDeclaration());
     }
