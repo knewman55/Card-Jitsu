@@ -12,7 +12,7 @@ public class Dealer extends Player{
         boolean hasNoElements = true;
         
         for(int i=0;i<this.getElementList().length;i++){
-            if(this.getElementList()[i] == true){
+            if(this.getElementList()[i][0] == true){
                 hasNoElements = false;
                 break;
             }
@@ -27,7 +27,7 @@ public class Dealer extends Player{
         }
         
         for(int i=0;i<this.getElementList().length;i++){
-            if(this.getElementList()[i] == false){
+            if(this.getElementList()[i][0] == false){
                 for(int j=0; j<deck.length; j++){
                     if(highestCard.getElementNum() != i && hasNoElements == false){
                         highestCard = deck[j][0];
